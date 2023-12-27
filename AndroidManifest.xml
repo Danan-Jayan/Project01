@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+android:versionCode="1" android:versionName="1.0" 
+package="com.example.jaga.disasterintimater">  
+<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />  
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />  
+<uses-permission android:name="android.permission.WRITE_SMS" />  
+<uses-permission android:name="android.permission.READ_SMS" />  
+<uses-permission android:name="android.permission.SEND_SMS" />  
+<uses-permission android:name="android.permission.RECEIVE_SMS" />  
+<uses-permission android:name="android.permission.INTERNET" />  
+<uses-permission 
+android:name="android.permission.ACCESS_NETWORK_STATE" />  
+<uses-permission 
+android:name="com.google.android.c2dm.permission.RECEIVE" />  
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />  
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />  
+<uses-feature android:glEsVersion="0x20000" android:required="true" />  
+<uses-permission android:name="android.permission.WAKE_LOCK" />  
+<application android:theme="resourceId:0x7f0d0004" android:label="Disaster Intimater" android:icon="res/mipmap-xxxhdpi-v4/ic_launcher.png" 
+android:debuggable="true" android:testOnly="true" android:allowBackup="true" 
+android:supportsRtl="true">  
+<meta-data android:name="com.google.android.geo.API_KEY" 
+android:value="AIzaSyCBpFCokfG2S9xA85FptY_6bONGUpdAOHg" />  
+<activity android:label="Disaster Intimater" 
+android:name="com.example.jaga.disasterintimater.MapsActivity" 
+android:screenOrientation="portrait" />  
+<receiver 
+android:name="com.example.jaga.disasterintimater.SmsBroadcastReceiver">  
+<intent-filter>  
+<action android:name="android.provider.Telephony.SMS_RECEIVED" />  
+</intent-filter>  
+</receiver>  
+<activity android:label="Disaster Intimater" 
+android:name="com.example.jaga.disasterintimater.HomeActivity" 
+android:screenOrientation="portrait">  
+<intent-filter>  
+<action android:name="android.intent.action.MAIN" />  
+<category android:name="android.intent.category.LAUNCHER" />  
+</intent-filter>  
+</activity>  
+<activity android:name="com.example.jaga.disasterintimater.SettingsActivity" />  
+<activity android:name="com.example.jaga.disasterintimater.AlertActivity" />  
+<activity android:theme="@android:style/Theme.Translucent" 
+android:name="com.google.android.gms.ads.AdActivity" 
+android:configChanges="0xfb0" />  
+<activity android:theme="resourceId:0x7f0d00eb" 
+android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" />  
+<activity android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true" />  
+<receiver 
+android:name="com.google.android.gms.measurement.AppMeasurementReceiver" 
+android:enabled="true">  
+<intent-filter>  
+<action android:name="com.google.android.gms.measurement.UPLOAD" />  
+</intent-filter>  
+</receiver>  
+<service 
+android:name="com.google.android.gms.measurement.AppMeasurementService" 
+android:enabled="true" android:exported="false" />  
+<meta-data android:name="com.google.android.gms.version" 
+android:value="8298000" />  
+</application>  
+</manifest>
